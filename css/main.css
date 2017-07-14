@@ -53,3 +53,12 @@ body {
 .main-post .card .tags a:hover {
 	color: #AAA
 }
+
+/*
+	=== Copyright
+*/
+
+.copyright {
+	height: 64px;
+  line-height: 64px
+}

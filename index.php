@@ -52,20 +52,20 @@
     <i class="material-icons left">fast_forward</i>
   </div>
   <?php else: ?>
-  <div class="waves-effect waves-light btn black right disabled">
-    <?php echo "next" ?>
+  <div class="waves-effect waves-light btn black right white-text disabled">
+    <?php echo "Next Page" ?>
     <i class="material-icons left">fast_forward</i>
   </div>
   <?php endif;?>
 
   <?php if (get_previous_posts_link() ) : ?>
-  <div class="waves-effect waves-light btn red left">
+  <div class="waves-effect waves-light btn red left white-text">
     <?php previous_posts_link("prev"); ?>
     <i class="material-icons left">fast_rewind</i>
   </div>
   <?php else: ?>
-  <div class="waves-effect waves-light btn red left disabled">
-    <?php echo "prev" ?>
+  <div class="waves-effect waves-light btn red left white-text disabled">
+    <?php echo "Prev Page" ?>
     <i class="material-icons left">fast_rewind</i>
   </div>
   <?php endif;?>
