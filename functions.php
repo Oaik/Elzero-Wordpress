@@ -1,4 +1,8 @@
 <?php 
+
+	// Register wp-materialize-navwalker
+ 	require_once get_template_directory() . '/wp_materialize_navwalker.php';
+
 	/*
 		============
 		Add Css Files
@@ -40,7 +44,10 @@
 		wp_nav_menu(array(
 			"theme_location" => "header_nav_menu",
 			"menu_class" => "right hide-on-med-and-down",
-			"container" => false
+			"container" => false,
+			"depth" => 2,
+			'walker' => new wp_materialize_navwalker()
+
 		));
 	}
 
@@ -49,13 +56,29 @@
 			"theme_location" => "header_nav_menu",
 			"menu_class" => "side-nav",
 			"menu_id" => "mobile-demo",
-			"container" => false
+			"container" => false,
+			"depth" => 1,
+
 		));
 	}
 
 	/*
+		==============
+		Filters Functions
+		==============
+	*/
+
+	function custom_excerpt_length( $length ) {
+		return 15;
+	}
+
+	function new_excerpt_more($post) {
+    return ' ...';
+	}
+
+	/*
 		============
-		Add Actions
+		Add Actions and Filters
 		============
 	*/
 	add_action("wp_enqueue_scripts", "elzero_add_css");
@@ -64,5 +87,8 @@
 	add_action("after_setup_theme", "elzero_add_nav_menu");
 
 	add_theme_support("post-thumbnails");
+
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+	add_filter('excerpt_more', 'new_excerpt_more');
 
 ?>	

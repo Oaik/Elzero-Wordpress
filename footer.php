@@ -1,5 +1,5 @@
 		<div class="copyright center grey darken-4 white-text">
-			Copyright &copy; Omar Ashraf 2018
+			Copyright <?php echo date("Y") ?> &copy; <?php bloginfo("name"); ?>
 		</div>
 		<?php wp_footer(); ?>
 	</body>
